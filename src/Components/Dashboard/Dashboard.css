@@ -1,0 +1,28 @@
+.dashboard > h1 {
+  margin: 1rem 0;
+}
+
+.dashboard-collection__items {
+  overflow-y: auto;
+  position: relative;
+  margin-right: 2rem;
+  /* max-height: 50rem; */
+  padding-bottom: 1rem;
+}
+
+.dashboard-collection__items::-webkit-scrollbar {
+  width: 0.7rem;
+}
+
+::-webkit-scrollbar-track {
+  margin: 1.3rem 0;
+  border: 2px solid #404052;
+  border-radius: 2rem;
+}
+
+::-webkit-scrollbar-thumb {
+  width: 1rem;
+  border-radius: 2rem;
+  background: #2728337d;
+}
+

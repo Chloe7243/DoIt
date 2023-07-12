@@ -1,0 +1,17 @@
+.tab{
+    padding: .5rem .7rem;
+    border: 1px solid #404052;
+    display: inline-block;
+    border-radius: .7rem;
+    /* font-size: .7rem; */
+    margin: 1rem 0;
+    cursor: pointer;
+}
+
+.tab + .tab{
+    margin-left: 1rem;
+}
+
+.active{
+    background-color: #404052;
+}

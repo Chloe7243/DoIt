@@ -1,0 +1,27 @@
+.todo-tasks__header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.back-to-previous-page {
+  width: 2.5rem;
+  height: 2.5rem;
+  background-color: #20212c;
+  padding: .5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.todo-tasks__list{
+    margin-top: 2rem;
+    /* background: #000; */
+}
+
+.todo-tasks__list__item{
+    width: 100%;
+    margin: 0;
+    background-color: #20212c;
+    padding: 1rem;
+    border-radius: 1rem;
+}

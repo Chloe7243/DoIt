@@ -1,0 +1,17 @@
+.side-container {
+  background: #20212c;
+  padding: 1rem;
+  height: calc(100vh - 3rem);
+  width: 15rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px -1px 8px;
+}
+
+
+.side-container > p {
+  margin-bottom: 1.5rem;
+  color: #a8a7af;
+}
+
+.side-container > div + div {
+  margin-top: 1rem;
+}

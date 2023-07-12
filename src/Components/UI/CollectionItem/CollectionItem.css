@@ -1,0 +1,15 @@
+.collection {
+  display: flex;
+  /* border: 2px solid;/ */
+  align-items: center;
+  cursor: pointer;
+}
+.collection div + div {
+  margin-left: 1rem;
+}
+
+.collection__icon {
+  background-color: black;
+  padding: 0.3rem 0.5rem;
+  border-radius: 0.4rem;
+}

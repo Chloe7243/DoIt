@@ -1,0 +1,8 @@
+.main__container {
+  background: #17181e;
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  display: flex;
+  /* flex: 1 1; */
+}
