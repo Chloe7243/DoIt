@@ -1,21 +1,20 @@
 import { PiCaretLeftLight } from "react-icons/pi";
 import "./CollectionTasks.css";
-import TodoItem from "../ToDoItem/ToDoItem";
+import TodoItem from "../TodoItem/TodoItem";
 import TaskForm from "../TaskForm/TaskForm";
 
-const CollectionTasks = ({ collectionItem }) => {
+const CollectionTasks = ({ collectionItem, renderPreviousPage }) => {
   const renderNewTask = () => {
     console.log(collectionItem.todo);
   };
 
-  const renderPreviousState = (event) => {
-    
-  }
-
   return (
     <div className="todo-tasks">
       <div className="todo-tasks__header">
-        <PiCaretLeftLight className="back-to-previous-page" onClick={renderPreviousState} />
+        <PiCaretLeftLight
+          className="back-to-previous-page"
+          onClick={renderPreviousPage}
+        />
         <h2>{collectionItem.title}</h2>
       </div>
       <TaskForm color={collectionItem.color} onAddNewTask={renderNewTask} />

@@ -1,4 +1,4 @@
-import CollectionItem from "../UI/CollectionItem/CollectionItem";
+import CollectionItem from "../CollectionItem/CollectionItem";
 import "./CollectionCard.css";
 import {
   PiCaretDownThin,
@@ -6,24 +6,23 @@ import {
   PiCaretUpThin,
 } from "react-icons/pi";
 import { useState } from "react";
-import TodoItem from "../ToDoItem/ToDoItem";
+import TodoItem from "../TodoItem/TodoItem";
 
-const CollectionCard = ({ item, i, setContentToDisplay, setItem, getHeight}) => {
+const CollectionCard = ({ item, i, setContentToDisplay, setItem }) => {
   const [viewList, setViewList] = useState(false);
   const displayTodoItems = () => {
-    getHeight("59vh")
     viewList ? setViewList(false) : setViewList(true);
   };
 
   const changeMainContent = () => {
-    setItem(item)
-    setContentToDisplay("CollectionTasks")
+    setItem(item);
+    setContentToDisplay("CollectionTasks");
   };
 
   return (
     <div className="collection-details" key={item.title + i + "234"}>
       <div className="collection-details__header">
-        <CollectionItem collection={item} />
+        <CollectionItem collection={item} style={{ cursor: "default" }} />
         {viewList ? (
           <PiCaretUpThin
             className="collection-details__header__icon"
@@ -36,7 +35,10 @@ const CollectionCard = ({ item, i, setContentToDisplay, setItem, getHeight}) => 
           />
         )}
       </div>
-      <ul className="collection-details__items" style={{padding: viewList ? "1rem": ""}}>
+      <ul
+        className="collection-details__items"
+        style={{ padding: viewList ? "1rem" : "" }}
+      >
         {viewList &&
           item.todo.map((task, i) => (
             <TodoItem task={task} key={task.title[0] + i} color={item.color} />

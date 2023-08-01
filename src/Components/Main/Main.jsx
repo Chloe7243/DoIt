@@ -1,6 +1,6 @@
-import "./MainContent.css";
+import "./Main.css";
 
-const MainContent = ({ children, visible }) => {
+const Main = ({ children, visible }) => {
   return (
     <div
       className={`main-content__container ${
@@ -12,4 +12,4 @@ const MainContent = ({ children, visible }) => {
   );
 };
 
-export default MainContent;
+export default Main;

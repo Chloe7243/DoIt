@@ -1,0 +1,53 @@
+.navigation-bar {
+  background: #20212c;
+  display: flex;
+  justify-content: space-between;
+  flex: 1 1;
+  padding: 0.5rem 1rem;
+  align-items: center;
+}
+
+.navigation-bar > div {
+  display: flex;
+  align-items: center;
+  flex-basis: 15rem;
+  font-size: 1.2rem;
+  gap: 1rem;
+}
+
+.navigation-bar > div:last-of-type {
+  flex-basis: 7rem;
+}
+
+.navigation-bar__page {
+  display: flex;
+  gap: 0.3rem;
+  align-items: center;
+  cursor: pointer;
+}
+
+.navigation-bar__page p {
+  font-size: 1rem;
+}
+
+.user__profile {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 1rem;
+}
+
+.user__profile > img {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+
+.navbar-icon {
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar-icon {
+    display: none;
+  }
+}

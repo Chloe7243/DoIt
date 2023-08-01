@@ -1,49 +1,79 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 import MainContainer from "./Components/UI/MainContainer";
-import MainContent from "./Components/MainContent/MainContent";
-import SideContent from "./Components/SideContent/SideContent";
-import NavigavtionBar from "./Components/NavContent/NavContent";
+import Main from "./Components/Main/Main";
+import SideBar from "./Components/SideBar/SideBar";
+import NavigavtionBar from "./Components/NavBar/NavBar";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import CollectionTasks from "./Components/CollectionTasks/CollectionTasks";
 
 function App() {
-  const [isVisible, setVisibility] = useState(false);
+  let content;
+  const [isSideBarVisible, setSideBarVisibility] = useState(false);
   const [contentToDisplay, setContentToDisplay] = useState("Dashboard");
+  const [prevPage, setprevPage] = useState("");
   const [item, setItem] = useState({});
 
   const toggleSidebarVisibility = () =>
-    isVisible ? setVisibility(false) : setVisibility(true);
+    isSideBarVisible ? setSideBarVisibility(false) : setSideBarVisibility(true);
+  console.log(window.innerWidth);
 
-  let collectionItem;
+  const displayTasks = (item) => {
+    setContentToDisplay("CollectionTasks");
+    setItem(item);
+  };
 
-  // const changeContent = (item) => {
-  //   (collectionItem = item);
+  const getPreviousPage = () => {};
 
-  //   viewTasks ? setViewTasks(false) : setViewTasks(true);
-  // }
+  useEffect(() => {
+    if (contentToDisplay != "CollectionTasks") setItem({});
+    setprevPage(contentToDisplay);
+  }, [contentToDisplay]);
+
+  switch (contentToDisplay) {
+    case "Dashboard":
+      content = (
+        <Dashboard
+          setContentToDisplay={setContentToDisplay}
+          setItem={setItem}
+        />
+      );
+      break;
+    case "CollectionTasks":
+      content = (
+        <CollectionTasks
+          collectionItem={item}
+          renderPreviousPage={getPreviousPage}
+        />
+      );
+      break;
+    case "Collection":
+      content = "hi";
+      break;
+    default:
+      content = (
+        <Dashboard
+          setContentToDisplay={setContentToDisplay}
+          setItem={setItem}
+        />
+      );
+  }
+
   return (
     <div>
       <NavigavtionBar
-        onMakeVisible={toggleSidebarVisibility}
+        toggleSideBar={toggleSidebarVisibility}
         setContentToDisplay={setContentToDisplay}
       />
-      <MainContainer>
-        <SideContent />
-        <MainContent>
-          {contentToDisplay === "Dashboard" ? (
-            <Dashboard
-              setContentToDisplay={setContentToDisplay}
-              setItem={setItem}
-            />
-          ) : contentToDisplay === "CollectionTasks" ? (
-            <CollectionTasks collectionItem={item} />
-          ) : contentToDisplay === "Collection" ? (
-            "Collections"
-          ) : (
-            "Tasks"
-          )}
-        </MainContent>
+      <MainContainer
+        isVisible={window.innerWidth < 600 ? isSideBarVisible : true}
+      >
+        <SideBar
+          activeCollection={item}
+          displayTasks={displayTasks}
+          isVisible={window.innerWidth < 768 ? isSideBarVisible : true}
+        />
+        <Main>{content}</Main>
       </MainContainer>
     </div>
   );

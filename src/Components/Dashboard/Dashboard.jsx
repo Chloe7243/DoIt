@@ -1,19 +1,17 @@
 import { useState } from "react";
-import { collectionsList } from "../../Utilties/CollectionItems";
+import { collectionsList } from "../../utilities";
 import "./Dashboard.css";
 import CollectionCard from "../CollectionCard/CollectionCard";
 import Tab from "../Tab/Tab";
 
 const Dashboard = ({ setContentToDisplay, setItem }) => {
   const [index, setIndex] = useState(0);
-  const [itemHeight, setItemHeight] = useState("57vh");
   const username = "Jane Doe";
   const setIndexValue = (event) => {
     const indexValue = event.target.getAttribute("data-index");
     setIndex(indexValue);
   };
 
-  const getHeight = (height) => setItemHeight(height);
   return (
     <div className="dashboard">
       <h3>Dashboard</h3>
@@ -22,23 +20,20 @@ const Dashboard = ({ setContentToDisplay, setItem }) => {
         {username}
       </h1>
       <Tab
-        className={index == 0 ? "active" : ""}
+        className={index == 0 ? " activeTab" : ""}
         onClick={setIndexValue}
         value="0"
       >
         Daily Overview
       </Tab>
       <Tab
-        className={index == 1 ? "active" : ""}
+        className={index == 1 ? " activeTab" : ""}
         onClick={setIndexValue}
         value="1"
       >
         Statistics
       </Tab>
-      <div
-        className="dashboard-collection__items"
-        style={{ height: itemHeight }}
-      >
+      <div className="dashboard-collection__items">
         {collectionsList.map((item, i) => (
           <CollectionCard
             item={item}
@@ -46,7 +41,6 @@ const Dashboard = ({ setContentToDisplay, setItem }) => {
             key={i + "234"}
             setContentToDisplay={setContentToDisplay}
             setItem={setItem}
-            getHeight={getHeight}
           />
         ))}
       </div>

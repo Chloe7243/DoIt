@@ -5,9 +5,9 @@
 .dashboard-collection__items {
   overflow-y: auto;
   position: relative;
-  margin-right: 2rem;
-  /* max-height: 50rem; */
+  padding-right: 2rem;
   padding-bottom: 1rem;
+  height: 57vh;
 }
 
 .dashboard-collection__items::-webkit-scrollbar {

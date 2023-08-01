@@ -1,0 +1,28 @@
+.side-container {
+  background: #20212c;
+  height: calc(100vh - 3rem);
+  width: 13rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px -1px 8px;
+  transition: 1s ease-in-out;
+}
+
+.side-container > h4 {
+  color: #a8a7af;
+  padding: 1rem;
+}
+
+.side-container > div {
+  padding: 0.5rem 1rem;
+}
+
+.side-container.not-visible {
+  transform: translate(-100%);
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .side-container {
+    position: absolute;
+    z-index: 2;
+  }
+}

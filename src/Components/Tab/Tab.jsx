@@ -3,7 +3,7 @@ import "./Tab.css";
 const Tab = ({ children, className, onClick, value }) => {
   return (
     <div
-      className={className ? "tab " + className : "tab"}
+      className={"tab" + className}
       onClick={onClick}
       data-index={value}
     >

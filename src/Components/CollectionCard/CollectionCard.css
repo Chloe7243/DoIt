@@ -33,13 +33,9 @@
   background-color: inherit;
   border: none;
   border-top: 1px solid #272833;
-  position: relative;
   cursor: pointer;
-}
-
-.go-to__collection__icon {
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translateY(-50%);
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
 }

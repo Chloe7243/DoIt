@@ -1,8 +1,8 @@
-import "./ToDoItem.css";
+import "./TodoItem.css";
 import DueDate from "../DueDate/DueDate";
 import { useState } from "react";
 
-const ToDoItem = ({ task, color, className }) => {
+const TodoItem = ({ task, color, className }) => {
   const [isChecked, setIsChecked] = useState(task.isChecked);
   const toggleCheck = () =>
     isChecked ? setIsChecked(false) : setIsChecked(true);
@@ -23,4 +23,4 @@ const ToDoItem = ({ task, color, className }) => {
   );
 };
 
-export default ToDoItem;
+export default TodoItem;

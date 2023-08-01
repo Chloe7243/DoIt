@@ -1,0 +1,11 @@
+.main-content__container {
+  max-height: 100vh;
+  flex-grow: 1;
+}
+
+.main-content__inner {
+  margin: auto;
+  max-width: 35rem;
+  width: 90%;
+  padding: 1rem;
+}

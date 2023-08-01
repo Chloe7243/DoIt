@@ -3,6 +3,7 @@ import { FaBookOpen, FaCode, FaUser } from "react-icons/fa";
 export const collectionsList = [
   {
     icon: FaCode,
+    id: "0",
     title: "Code",
     color: "#ad6cdd",
     todo: [
@@ -22,7 +23,7 @@ export const collectionsList = [
         title: "Finish React course",
         due_date: new Date(2023, 4, 6),
         due_time: "20:10",
-        isChecked: false,
+        isChecked: true,
       },
       {
         title: "Start Node Course",
@@ -34,6 +35,7 @@ export const collectionsList = [
   },
   {
     icon: FaBookOpen,
+    id: "1",
     title: "School",
     color: "#fb77a1",
     todo: [
@@ -59,6 +61,7 @@ export const collectionsList = [
   },
   {
     icon: FaUser,
+    id: "2",
     title: "Personal",
     color: "#70c3bd",
     todo: [
