@@ -14,25 +14,27 @@ const Dashboard = ({ setContentToDisplay, setItem }) => {
 
   return (
     <div className="dashboard">
-      <h3>Dashboard</h3>
-      <h1>
-        Good morning, <br />
-        {username}
-      </h1>
-      <Tab
-        className={index == 0 ? " activeTab" : ""}
-        onClick={setIndexValue}
-        value="0"
-      >
-        Daily Overview
-      </Tab>
-      <Tab
-        className={index == 1 ? " activeTab" : ""}
-        onClick={setIndexValue}
-        value="1"
-      >
-        Statistics
-      </Tab>
+      <div className="dashboard-header">
+        <h3>Dashboard</h3>
+        <h1>
+          Good morning, <br />
+          {username}
+        </h1>
+        <Tab
+          className={index == 0 ? " activeTab" : ""}
+          onClick={setIndexValue}
+          value="0"
+        >
+          Daily Overview
+        </Tab>
+        <Tab
+          className={index == 1 ? " activeTab" : ""}
+          onClick={setIndexValue}
+          value="1"
+        >
+          Statistics
+        </Tab>
+      </div>
       <div className="dashboard-collection__items">
         {collectionsList.map((item, i) => (
           <CollectionCard

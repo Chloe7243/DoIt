@@ -1,12 +1,18 @@
 import "./TodoItem.css";
 import DueDate from "../DueDate/DueDate";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-const TodoItem = ({ task, color, className }) => {
+const TodoItem = ({ task, color, className, renderPage }) => {
   const [isChecked, setIsChecked] = useState(task.isChecked);
-  const toggleCheck = () =>
+  const toggleCheck = () => {
     isChecked ? setIsChecked(false) : setIsChecked(true);
+  };
   task.isChecked = isChecked;
+
+  useEffect(() => {
+    renderPage();
+  }, [isChecked]);
+
   return (
     <li className={"task " + className}>
       <input
@@ -17,8 +23,11 @@ const TodoItem = ({ task, color, className }) => {
         className={"regCheckbox" + (task.isChecked ? " checked" : "")}
         style={{ borderColor: color, backgroundColor: task.isChecked && color }}
       />
-      <p className={task.isChecked ? "checked" : ""}>{task.title}</p>
-      <p>{<DueDate due_date={task.due_date} />}</p>
+      <span>
+  
+      <p className={"title" + (task.isChecked && " checked")}>{task.title}</p>
+      {!task.isChecked && <DueDate due_date={task.due_date} due_time={task.due_time} key={task.id} />}
+      </span>
     </li>
   );
 };

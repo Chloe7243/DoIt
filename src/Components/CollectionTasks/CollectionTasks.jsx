@@ -18,6 +18,11 @@ const CollectionTasks = ({ collectionItem, renderPreviousPage }) => {
     setCompletedTasks(collectionTodo.filter((item) => item.isChecked));
   }, [collectionTodo]);
 
+  const renderPage = () => {
+    setIncompletedTasks(collectionTodo.filter((item) => !item.isChecked));
+    setCompletedTasks(collectionTodo.filter((item) => item.isChecked));
+  };
+
   const renderNewTask = (new_todo) => {
     setCollectionTodo((prevTodos) => {
       return [new_todo, ...prevTodos];
@@ -51,6 +56,7 @@ const CollectionTasks = ({ collectionItem, renderPreviousPage }) => {
                 key={task.title[0] + i}
                 color={collectionItem.color}
                 className="todo-tasks__list__item"
+                renderPage={renderPage}
               />
             ))}
           </ul>
@@ -63,9 +69,10 @@ const CollectionTasks = ({ collectionItem, renderPreviousPage }) => {
             {completedTasks.map((task, i) => (
               <TodoItem
                 task={task}
-                key={task.title[0] + i}
+                key={task.title[0] + i + 1}
                 color={collectionItem.color}
                 className="todo-tasks__list__item"
+                renderPage={renderPage}
               />
             ))}
           </ul>

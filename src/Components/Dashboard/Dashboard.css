@@ -1,3 +1,10 @@
+.dashboard{
+  height:inherit;
+  display: flex;
+  flex-direction: column;
+  flex-basis: auto-fit auto-fit;
+}
+
 .dashboard > h1 {
   margin: 1rem 0;
 }
@@ -7,5 +14,11 @@
   position: relative;
   padding-right: 2rem;
   padding-bottom: 1rem;
-  height: 57vh;
 }
+
+@media screen and (max-width: 700px) {
+  .dashboard-collection__items {
+    padding-right: 0;
+  }
+}
+

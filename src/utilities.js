@@ -9,25 +9,25 @@ export const collectionsList = [
     todo: [
       {
         title: "Finish Personal Projects",
-        due_date: new Date(2023, 5, 6),
+        due_date: "2023-05-06",
         due_time: "20:10",
         isChecked: false,
       },
       {
         title: "Post Personal Project on Github",
-        due_date: new Date(2023, 4, 6),
+        due_date: "2023-08-13",
         due_time: "20:10",
         isChecked: false,
       },
       {
         title: "Finish React course",
-        due_date: new Date(2023, 4, 6),
+        due_date: "2023-08-13",
         due_time: "20:10",
         isChecked: true,
       },
       {
         title: "Start Node Course",
-        due_date: new Date(2023, 4, 6),
+        due_date: "2023-08-13",
         due_time: "20:10",
         isChecked: false,
       },
@@ -41,19 +41,19 @@ export const collectionsList = [
     todo: [
       {
         title: "Do Alx projects",
-        due_date: new Date(2023, 4, 6),
+        due_date: "2023-08-13",
         due_time: "20:10",
         isChecked: false,
       },
       {
         title: "Read up on Alx concepts",
-        due_date: new Date(2023, 4, 6),
+        due_date: "2023-08-13",
         due_time: "20:10",
         isChecked: false,
       },
       {
         title: "Read up on react concepts",
-        due_date: new Date(2023, 4, 6),
+        due_date: "2023-08-13",
         due_time: "20:10",
         isChecked: false,
       },
@@ -67,19 +67,19 @@ export const collectionsList = [
     todo: [
       {
         title: "Go to market",
-        due_date: new Date(2023, 4, 6),
+        due_date: "2023-08-13",
         due_time: "20:10",
         isChecked: false,
       },
       {
         title: "Pay debts",
-        due_date: new Date(2023, 4, 6),
+        due_date: "2023-08-13",
         due_time: "20:10",
         isChecked: false,
       },
       {
         title: "Collect money",
-        due_date: new Date(2023, 4, 6),
+        due_date: "2023-08-13",
         due_time: "20:10",
         isChecked: false,
       },

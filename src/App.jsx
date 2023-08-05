@@ -16,7 +16,6 @@ function App() {
 
   const toggleSidebarVisibility = () =>
     isSideBarVisible ? setSideBarVisibility(false) : setSideBarVisibility(true);
-  console.log(window.innerWidth);
 
   const displayTasks = (item) => {
     setContentToDisplay("CollectionTasks");
@@ -72,7 +71,7 @@ function App() {
         <SideBar
           activeCollection={item}
           displayTasks={displayTasks}
-          isVisible={window.innerWidth < 768 ? isSideBarVisible : true}
+          isVisible={window.innerWidth < 600 ? isSideBarVisible : true}
         />
         <Main>{content}</Main>
       </MainContainer>

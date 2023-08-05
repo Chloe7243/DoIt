@@ -46,8 +46,16 @@
   cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 601px) {
   .navbar-icon {
     display: none;
   }
+}
+
+@media screen and (max-width: 585px) {
+  .navigation-bar__page {
+    display: none!important;
+  }
+
+
 }
