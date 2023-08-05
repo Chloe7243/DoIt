@@ -1,9 +1,9 @@
 .side-container {
   background: #20212c;
   height: calc(100vh - 2.5rem);
-  width: 13rem;
+  width: 17rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px -1px 8px;
-  transition: 1s ease-in-out;
+  transition: 500ms ease-in-out;
 }
 
 .side-container > h4 {
@@ -17,12 +17,13 @@
 
 .side-container.not-visible {
   transform: translate(-100%);
-  display: none;
+  /* display: none; */
 }
 
 @media screen and (max-width: 600px) {
   .side-container {
     position: absolute;
     z-index: 2;
+    width: 12rem;
   }
 }

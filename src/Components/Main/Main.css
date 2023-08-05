@@ -6,14 +6,13 @@
 
 .main-content__inner {
   margin: auto;
-  max-width: 35rem;
-  width: 90%;
+  max-width: 38rem;
   padding: 1rem;
   height: 100%;
 }
 
-@media screen and (max-width: 460px) {
+@media screen and (min-width: 1300px) {
   .main-content__inner {
-    padding: 1rem 0;
+    max-width: 60%;
   }
 }

@@ -20,6 +20,7 @@ function App() {
   const displayTasks = (item) => {
     setContentToDisplay("CollectionTasks");
     setItem(item);
+    toggleSidebarVisibility();
   };
 
   const getPreviousPage = () => {};
@@ -74,6 +75,11 @@ function App() {
           isVisible={window.innerWidth < 600 ? isSideBarVisible : true}
         />
         <Main>{content}</Main>
+        {window.innerWidth < 600 && isSideBarVisible ? (
+          <div className="overlay" onClick={toggleSidebarVisibility}></div>
+        ) : (
+          ""
+        )}
       </MainContainer>
     </div>
   );
