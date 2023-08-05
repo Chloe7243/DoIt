@@ -9,20 +9,3 @@
   padding-bottom: 1rem;
   height: 57vh;
 }
-
-.dashboard-collection__items::-webkit-scrollbar {
-  width: 0.7rem;
-}
-
-::-webkit-scrollbar-track {
-  margin: 1.3rem 0;
-  border: 2px solid #404052;
-  border-radius: 2rem;
-}
-
-::-webkit-scrollbar-thumb {
-  width: 1rem;
-  border-radius: 2rem;
-  background: #2728337d;
-}
-

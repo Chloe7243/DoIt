@@ -44,6 +44,7 @@ function App() {
         <CollectionTasks
           collectionItem={item}
           renderPreviousPage={getPreviousPage}
+          key={item.id}
         />
       );
       break;
