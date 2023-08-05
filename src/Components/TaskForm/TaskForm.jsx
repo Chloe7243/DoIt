@@ -11,15 +11,19 @@ const TaskForm = ({ color, onAddNewTask }) => {
   const submitHandler = (event) => {
     event.preventDefault();
     onAddNewTask();
-    };
-    
-    const currentDate = new Date()
-    console.log(currentDate)
+    setFormVisibility(false);
+  };
 
-    return (
+  const currentDate = new Date();
+  console.log(currentDate);
+
+  return (
     <div
       className="add-task__container"
-      style={{ padding: formVisibility ? "1rem" : "" }}
+      style={{
+        padding: formVisibility ? "1rem" : "",
+        cursor: formVisibility ? "auto" : "",
+      }}
     >
       {!formVisibility ? (
         <div className="add-task" onClick={setContentDisplay}>

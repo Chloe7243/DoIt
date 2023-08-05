@@ -17,7 +17,11 @@ const CollectionTasks = ({ collectionItem, renderPreviousPage }) => {
         />
         <h2>{collectionItem.title}</h2>
       </div>
-      <TaskForm color={collectionItem.color} onAddNewTask={renderNewTask} />
+      <TaskForm
+        color={collectionItem.color}
+        onAddNewTask={renderNewTask}
+        key={collectionItem.id}
+      />
       <ul className="collection-details__items todo-tasks__list">
         {collectionItem.todo.map((task, i) => (
           <TodoItem
