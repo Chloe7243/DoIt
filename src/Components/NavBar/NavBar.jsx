@@ -24,7 +24,7 @@ const NavigavtionBar = ({ setContentToDisplay, toggleSideBar}) => {
         </div>
         <div className="navigation-bar__page" onClick={changeMainContent}>
           <BiCollection />
-          <p>Collection</p>
+          <p>Collections</p>
         </div>
       </div>
       <div className="navigation-bar__right">

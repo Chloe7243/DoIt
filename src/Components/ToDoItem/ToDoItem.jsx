@@ -9,9 +9,10 @@ const TodoItem = ({ task, color, className, renderPage }) => {
   };
   task.isChecked = isChecked;
 
-  useEffect(() => {
-    renderPage();
-  }, [isChecked]);
+  if (renderPage)
+    useEffect(() => {
+      renderPage();
+    }, [isChecked]);
 
   return (
     <li className={"task " + className}>
@@ -24,9 +25,14 @@ const TodoItem = ({ task, color, className, renderPage }) => {
         style={{ borderColor: color, backgroundColor: task.isChecked && color }}
       />
       <span>
-  
-      <p className={"title" + (task.isChecked && " checked")}>{task.title}</p>
-      {!task.isChecked && <DueDate due_date={task.due_date} due_time={task.due_time} key={task.id} />}
+        <p className={"title" + (task.isChecked && " checked")}>{task.title}</p>
+        {(!task.isChecked && task.due_date) &&(
+          <DueDate
+            due_date={task.due_date}
+            due_time={task.due_time}
+            key={task.id}
+          />
+        )}
       </span>
     </li>
   );

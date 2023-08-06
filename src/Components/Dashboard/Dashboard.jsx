@@ -24,6 +24,7 @@ const Dashboard = ({ setContentToDisplay, setItem }) => {
           className={index == 0 ? " activeTab" : ""}
           onClick={setIndexValue}
           value="0"
+          key={0}
         >
           Daily Overview
         </Tab>
@@ -31,6 +32,7 @@ const Dashboard = ({ setContentToDisplay, setItem }) => {
           className={index == 1 ? " activeTab" : ""}
           onClick={setIndexValue}
           value="1"
+          key={1}
         >
           Statistics
         </Tab>

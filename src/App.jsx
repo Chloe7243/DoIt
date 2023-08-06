@@ -6,6 +6,7 @@ import SideBar from "./Components/SideBar/SideBar";
 import NavigavtionBar from "./Components/NavBar/NavBar";
 import Dashboard from "./Components/Dashboard/Dashboard";
 import CollectionTasks from "./Components/CollectionTasks/CollectionTasks";
+import Collections from "./Components/Collections/Collections";
 
 function App() {
   let content;
@@ -48,8 +49,8 @@ function App() {
         />
       );
       break;
-    case "Collection":
-      content = "hi";
+    case "Collections":
+      content = <Collections />;
       break;
     default:
       content = (

@@ -13,6 +13,7 @@ const SideBar = ({ isVisible, activeCollection, displayTasks }) => {
             key={item.color + i + "234"}
             isActive={activeCollection.id === item.id ? true : false}
             onClick={displayTasks}
+            style={{cursor: "pointer"}}
           />
         );
       })}

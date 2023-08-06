@@ -11,6 +11,7 @@
 .regCheckbox {
   -webkit-appearance: none;
   width: 1.5rem;
+  min-width: 1.5rem;
   height: 1.5rem;
   border: 2px solid;
   position: relative;

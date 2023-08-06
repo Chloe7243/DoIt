@@ -1,19 +1,16 @@
 import "./CollectionItem.css";
-const CollectionItem = ({ collection, style, isActive, onClick }) => {
+const CollectionItem = ({ collection, style, isActive, onClick, className }) => {
   const setTasksToDisplay = () => onClick(collection);
-
+  const classes = `collection ${isActive ? " activeCollection" : ""} ${className && className}`
   return (
-    <div
-      className={"collection" + (isActive ? " activeCollection" : "")}
-      onClick={setTasksToDisplay}
-    >
+    <div className={classes} onClick={setTasksToDisplay} style={{ ...style }}>
       <div
         className="collection__icon"
-        style={{ backgroundColor: collection.color, ...style }}
+        style={{ backgroundColor: collection.color}}
       >
         <collection.icon />
       </div>
-      <div className="collection__title">{collection.title}</div>
+      <p className="collection__title">{collection.title}</p>
     </div>
   );
 };

@@ -1,17 +1,19 @@
-.tab{
-    padding: .5rem .7rem;
-    border: 1px solid #404052;
-    display: inline-block;
-    border-radius: .7rem;
-    /* font-size: .7rem; */
-    margin: 1rem 0;
-    cursor: pointer;
+.tab {
+  padding: 0.5rem 0.7rem;
+  border: 1px solid #404052;
+  display: inline-block;
+  border-radius: 0.7rem;
+  /* font-size: .7rem; */
+  margin: 1rem 0;
+  cursor: pointer;
+  font-size: .8rem;
+  font-weight: 500;
 }
 
-.tab + .tab{
-    margin-left: 1rem;
+.tab + .tab {
+  margin-left: 1rem;
 }
 
-.activeTab{
-    background-color: #404052;
+.activeTab {
+  background-color: #404052;
 }

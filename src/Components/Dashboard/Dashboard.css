@@ -2,7 +2,7 @@
   height:inherit;
   display: flex;
   flex-direction: column;
-  flex-basis: auto-fit auto-fit;
+  /* flex-basis: auto-fit auto-fit; */
 }
 
 .dashboard > h1 {

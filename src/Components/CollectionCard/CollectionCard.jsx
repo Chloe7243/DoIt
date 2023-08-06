@@ -22,7 +22,7 @@ const CollectionCard = ({ item, i, setContentToDisplay, setItem }) => {
   return (
     <div className="collection-details" key={item.title + i + "234"}>
       <div className="collection-details__header">
-        <CollectionItem collection={item} style={{ cursor: "default" }} />
+        <CollectionItem collection={item}/>
         {viewList ? (
           <PiCaretUpThin
             className="collection-details__header__icon"
