@@ -4,6 +4,13 @@
   width: 17rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px -1px 8px;
   transition: 500ms ease-in-out;
+  overflow: auto;
+  padding-bottom: 1rem;
+}
+
+.side-container::-webkit-scrollbar{
+  appearance: none;
+  display: none;
 }
 
 .side-container > h4 {

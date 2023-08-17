@@ -50,7 +50,7 @@ function App() {
       );
       break;
     case "Collections":
-      content = <Collections />;
+      content = <Collections setContentToDisplay={setContentToDisplay} />;
       break;
     default:
       content = (

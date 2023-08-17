@@ -27,6 +27,7 @@ const CollectionTasks = ({ collectionItem, renderPreviousPage }) => {
     setCollectionTodo((prevTodos) => {
       return [new_todo, ...prevTodos];
     });
+    collectionItem.todo.push(new_todo);
   };
 
   return (

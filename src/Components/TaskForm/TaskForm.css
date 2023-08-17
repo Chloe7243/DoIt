@@ -1,13 +1,14 @@
-.add-task__container {
+.form__container {
   margin-top: 2rem;
   display: flex;
   gap: 1rem;
   align-items: center;
   border: 2px solid #20212c;
-  /* padding: 0.7rem; */
+  padding: 1rem;
   border-radius: 1rem;
   cursor: pointer;
   transition: height 700ms ease-in-out;
+  
 }
 
 input{
@@ -31,7 +32,7 @@ input{
   color: #20212c;
 }
 
-.add-task__form {
+.form {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -39,17 +40,18 @@ input{
   width: 100%;
 }
 
-.due_date_time {
+.form__extras {
   display: flex;
   justify-content: space-evenly;
   gap: 1rem;
 }
 
-.due_date_time > div {
+.form__extras > div {
   width: 50%;
+  position: relative;
 }
 
-.add-task__form input {
+.form input {
   background: none;
   padding: 0.7rem;
   border: 1px solid #20212c;
@@ -57,13 +59,14 @@ input{
   border-radius: 0.5rem;
 }
 
-.add-task__form__actions {
+.form__actions {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
 }
 
-.add-task__form__actions > button {
+.form__actions > button {
+  background: #20212c;
   border-radius: 0.5rem;
   border: none;
   width: 10rem;

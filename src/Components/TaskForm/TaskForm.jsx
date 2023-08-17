@@ -90,9 +90,9 @@ const TaskForm = ({ color, onAddNewTask }) => {
 
   return (
     <div
-      className="add-task__container"
+      className="form__container"
       style={{
-        padding: formVisibility ? "1rem" : "",
+        padding: !formVisibility ? "0" : "",
         cursor: formVisibility ? "auto" : "",
       }}
     >
@@ -105,7 +105,7 @@ const TaskForm = ({ color, onAddNewTask }) => {
           <p>Add a Task</p>
         </div>
       ) : (
-        <form className="add-task__form" onSubmit={submitHandler}>
+        <form className="form" onSubmit={submitHandler}>
           <div className="inputbox">
             <input
               type="text"
@@ -124,7 +124,7 @@ const TaskForm = ({ color, onAddNewTask }) => {
             />
             {!validInput.task && <p className="inputErr">Please add a task</p>}
           </div>
-          <div className="due_date_time">
+          <div className="form__extras">
             <div className="inputbox">
               <input
                 type="date"
@@ -160,7 +160,7 @@ const TaskForm = ({ color, onAddNewTask }) => {
               )}
             </div>
           </div>
-          <div className="add-task__form__actions">
+          <div className="form__actions">
             <button onClick={setContentDisplay} style={{ background: color }}>
               Cancel
             </button>
