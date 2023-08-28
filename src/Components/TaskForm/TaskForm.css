@@ -3,7 +3,7 @@
   display: flex;
   gap: 1rem;
   align-items: center;
-  border: 2px solid #20212c;
+  border: 2px solid var(--primray-color);
   padding: 1rem;
   border-radius: 1rem;
   cursor: pointer;
@@ -29,7 +29,7 @@ input{
   height: 1.5rem;
   border-radius: 0.5rem;
   padding: 0.4rem;
-  color: #20212c;
+  color: var(--primray-color);
 }
 
 .form {
@@ -54,7 +54,7 @@ input{
 .form input {
   background: none;
   padding: 0.7rem;
-  border: 1px solid #20212c;
+  border: 1px solid var(--primray-color);
   outline: none;
   border-radius: 0.5rem;
 }
@@ -66,7 +66,7 @@ input{
 }
 
 .form__actions > button {
-  background: #20212c;
+  background: var(--primray-color);
   border-radius: 0.5rem;
   border: none;
   width: 10rem;

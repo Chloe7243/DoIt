@@ -1,6 +1,6 @@
 
 .collection-details {
-  background-color: #20212c;
+  background-color: var(--primary-color);
   border-radius: 1rem;
   margin: 1.5rem 0;
 }

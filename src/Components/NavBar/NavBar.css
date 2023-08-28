@@ -1,5 +1,5 @@
 .navigation-bar {
-  background: #20212c;
+  background: var(--primary-color);
   display: flex;
   justify-content: space-between;
   flex: 1 1;
