@@ -2,6 +2,7 @@ import { FaBars, FaSearch, FaBell } from "react-icons/fa";
 import { BiSolidDashboard, BiCollection } from "react-icons/bi";
 import ProfilePicture from "../../assets/profilepic.jpg";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavigavtionBar = ({ setContentToDisplay, toggleSideBar}) => {
   const changeMainContent = (event) => {
@@ -18,14 +19,14 @@ const NavigavtionBar = ({ setContentToDisplay, toggleSideBar}) => {
     <div className="navigation-bar">
       <div className="navigation-bar__left">
         <FaBars className="navbar-icon" onClick={toggleSideBar} />
-        <div className="navigation-bar__page" onClick={changeMainContent}>
+        <Link to="" className="navigation-bar__page">
           <BiSolidDashboard />
           <p>Dashboard</p>
-        </div>
-        <div className="navigation-bar__page" onClick={changeMainContent}>
+        </Link>
+        <Link to="collections" className="navigation-bar__page">
           <BiCollection />
           <p>Collections</p>
-        </div>
+        </Link>
       </div>
       <div className="navigation-bar__right">
         <FaSearch />

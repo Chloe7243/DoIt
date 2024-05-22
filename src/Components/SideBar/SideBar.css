@@ -1,11 +1,14 @@
 .side-container {
   background: var(--primary-color);
-  height: 100vh;
-  width: 17rem;
+  height: calc(100vh - 2rem);
+  width: 15rem;
   box-shadow: rgba(0, 0, 0, 0.24) 0px -1px 8px;
   transition: 500ms ease-in-out;
   overflow: auto;
   padding-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .side-container::-webkit-scrollbar{
@@ -18,13 +21,27 @@
   padding: 1rem;
 }
 
-.side-container > div {
+.side-container > div{
+flex: 1;
+}
+
+.side-container  div > a {
   padding: 0.5rem 1rem;
 }
 
 .side-container.not-visible {
   transform: translate(-100%);
   /* display: none; */
+}
+
+.side-container button{
+  padding: 1rem;
+  width: 90%;
+  border-radius: .5rem;
+  border: none;
+  align-self: center;
+  margin-bottom: .5rem;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 600px) {

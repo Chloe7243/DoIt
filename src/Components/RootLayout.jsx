@@ -3,7 +3,21 @@ import NavigavtionBar from "./NavBar/NavBar";
 import SideBar from "./SideBar/SideBar";
 import Main from "./Main/Main";
 import MainContainer from "./UI/MainContainer";
+import { useState } from "react";
 const Root = () => {
+  const [isSideBarVisible, setSideBarVisibility] = useState(false);
+  const [contentToDisplay, setContentToDisplay] = useState("Dashboard");
+  const [prevPage, setprevPage] = useState("");
+  const [item, setItem] = useState({});
+
+  const toggleSidebarVisibility = () =>
+    isSideBarVisible ? setSideBarVisibility(false) : setSideBarVisibility(true);
+
+  const displayTasks = (item) => {
+    setContentToDisplay("CollectionTasks");
+    setItem(item);
+    toggleSidebarVisibility();
+  };
   return (
     <>
       <NavigavtionBar
@@ -18,7 +32,9 @@ const Root = () => {
           displayTasks={displayTasks}
           isVisible={window.innerWidth < 600 ? isSideBarVisible : true}
         />
-        <Main>{content}</Main>
+        <Main>
+          <Outlet />
+        </Main>
         {window.innerWidth < 600 && isSideBarVisible ? (
           <div className="overlay" onClick={toggleSidebarVisibility}></div>
         ) : (

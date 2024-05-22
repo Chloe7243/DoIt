@@ -1,10 +1,15 @@
 import { PiCaretLeftLight } from "react-icons/pi";
 import "./CollectionTasks.css";
+import { collectionsList } from "../../utilities";
 import TodoItem from "../TodoItem/TodoItem";
 import TaskForm from "../TaskForm/TaskForm";
 import { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 
-const CollectionTasks = ({ collectionItem, renderPreviousPage }) => {
+const CollectionTasks = () => {
+  const id = useParams().collectionId;
+  console.log(id, collectionsList);
+  const collectionItem = collectionsList.filter((item) => item.id == id)[0];
   const [collectionTodo, setCollectionTodo] = useState(collectionItem.todo);
   const [incompletedTasks, setIncompletedTasks] = useState(
     collectionTodo.filter((item) => !item.isChecked)
@@ -33,10 +38,9 @@ const CollectionTasks = ({ collectionItem, renderPreviousPage }) => {
   return (
     <div className="todo-tasks">
       <div className="todo-tasks__header">
-        <PiCaretLeftLight
-          className="back-to-previous-page"
-          onClick={renderPreviousPage}
-        />
+        <Link to=".." className="back-to-previous-page">
+          <PiCaretLeftLight />
+        </Link>
         <h2>{collectionItem.title}</h2>
       </div>
       <div className="taskContainer">

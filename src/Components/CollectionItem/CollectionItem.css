@@ -1,8 +1,11 @@
-.collection {
-  display: flex;
-  /* border: 2px solid;/ */
+
+.collection a {
   align-items: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
   gap: 1rem;
+  cursor: auto;
 }
 
 .collection__icon {
@@ -15,7 +18,7 @@
 }
 
 .activeCollection {
-  background-color: #272732;
+  background-color: #3636366c;
   padding: 0.7rem 1rem !important;
   transition: all 0.5s ease-in-out;
 }

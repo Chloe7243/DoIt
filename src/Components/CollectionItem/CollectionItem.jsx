@@ -1,16 +1,23 @@
+import { NavLink } from "react-router-dom";
 import "./CollectionItem.css";
-const CollectionItem = ({ collection, style, isActive, onClick, className }) => {
-  const setTasksToDisplay = () => onClick(collection);
-  const classes = `collection ${isActive ? " activeCollection" : ""} ${className && className}`
+const CollectionItem = ({ collection, style, onClick, className }) => {
+  let active = false;
   return (
-    <div className={classes} onClick={setTasksToDisplay} style={{ ...style }}>
-      <div
-        className="collection__icon"
-        style={{ backgroundColor: collection.color}}
+    <div className="collection">
+      <NavLink
+        to={`/collections/${collection.id}`}
+        className={({ isActive }) => (isActive ? "activeCollection" : "")}
+        style={style}
+        onClick={onClick}
       >
-        <collection.icon />
-      </div>
-      <p className="collection__title">{collection.title}</p>
+        <div
+          className="collection__icon"
+          style={{ backgroundColor: collection.color }}
+        >
+          <collection.icon />
+        </div>
+        <p className="collection__title">{collection.title}</p>
+      </NavLink>
     </div>
   );
 };

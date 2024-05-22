@@ -7,6 +7,7 @@ import {
 } from "react-icons/pi";
 import { useState } from "react";
 import TodoItem from "../TodoItem/TodoItem";
+import { Link } from "react-router-dom";
 
 const CollectionCard = ({ item, i, setContentToDisplay, setItem }) => {
   const [viewList, setViewList] = useState(false);
@@ -22,7 +23,7 @@ const CollectionCard = ({ item, i, setContentToDisplay, setItem }) => {
   return (
     <div className="collection-details" key={item.title + i + "234"}>
       <div className="collection-details__header">
-        <CollectionItem collection={item}/>
+        <CollectionItem collection={item} onClick={(e)=>e.preventDefault()}/>
         {viewList ? (
           <PiCaretUpThin
             className="collection-details__header__icon"
@@ -45,10 +46,10 @@ const CollectionCard = ({ item, i, setContentToDisplay, setItem }) => {
           ))}
       </ul>
 
-      <button className="go-to__collection" onClick={changeMainContent}>
+      <Link to={`/collections/${item.id}`} className="go-to__collection">
         Go to Collection
         <PiArrowRightBold className="go-to__collection__icon" />
-      </button>
+      </Link>
     </div>
   );
 };
